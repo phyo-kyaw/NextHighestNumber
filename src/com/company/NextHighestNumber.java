@@ -24,8 +24,13 @@ public class NextHighestNumber {
         if(Integer.parseInt(valueIn) < 0 ){
             value = valueIn.substring(1);
             isNegativeValue = true;
+            valueBufferStart.append(value);
         }
-        valueBufferStart.append(value);
+        else{
+            valueBufferStart.append(valueIn);
+            value = valueIn;
+        }
+
 
         for (int i = value.length()-1; i > 0; i--) {
             //System.out.println(i);
@@ -35,24 +40,24 @@ public class NextHighestNumber {
             left = String.valueOf(value.charAt(i - 1));
 
             valueBufferStart.setLength(valueBufferStart.length() - 1);
-            System.out.println(valueBufferStart);
+            //System.out.println(valueBufferStart);
 
             //valueBufferStart.
 
 
-                if (isCurrentDigitValueGreaterThanLeftDigitValue(Integer.parseInt(current),
-                        Integer.parseInt(left)) && !isNegativeValue
-                || Integer.parseInt(current) < Integer.parseInt(left) && isNegativeValue) {
-                    valueBuffer.insert(0, current);
-                    valueBuffer.insert(0, left);
-                    valueToProcess = left;
-                    valueBufferStart.setLength(valueBufferStart.length() - 1);
-                    isChanged = true;
-                    break;
-                    //isNextSkipped = true;
-                } else {
-                    valueBuffer.insert(0, current);
-                }
+            if ( ( isCurrentDigitValueGreaterThanLeftDigitValue(Integer.parseInt(current),
+                    Integer.parseInt(left)) && !isNegativeValue )
+            || ( Integer.parseInt(current) < Integer.parseInt(left) && isNegativeValue) ) {
+                valueBuffer.insert(0, current);
+                valueBuffer.insert(0, left);
+                valueToProcess = left;
+                valueBufferStart.setLength(valueBufferStart.length() - 1);
+                isChanged = true;
+                break;
+                //isNextSkipped = true;
+            } else {
+                valueBuffer.insert(0, current);
+            }
 
 
         }

@@ -14,8 +14,8 @@ public class Main {
         Scanner in = new Scanner(System.in);
         String value = "";
 
-        System.out.println(Integer.MAX_VALUE);
-        System.out.println(Integer.MIN_VALUE);
+        //System.out.println(Integer.MAX_VALUE);
+        //System.out.println(Integer.MIN_VALUE);
 
         do {
 
