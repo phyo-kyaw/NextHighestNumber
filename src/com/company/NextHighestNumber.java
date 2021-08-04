@@ -73,7 +73,7 @@ public class NextHighestNumber {
             }
             else{
                 valueBufferProcessed = new StringBuffer(sortValueDescending(valueBuffer.toString()));
-                int indexValueToMoveForward = valueBufferProcessed.indexOf(valueToProcess) + 1;
+                int indexValueToMoveForward = valueBufferProcessed.lastIndexOf(valueToProcess) + 1;
                 char valueToMoveForward = valueBufferProcessed.charAt(indexValueToMoveForward);
                 valueBufferProcessed.delete(indexValueToMoveForward, indexValueToMoveForward +1);
 
