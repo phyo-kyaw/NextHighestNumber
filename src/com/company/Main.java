@@ -9,17 +9,26 @@ public class Main {
 
     public static void main(String[] args) {
 
-
         NextHighestNumber nextHighestNumber = new NextHighestNumber();
 
-        System.out.println("Please enter a number:");
-        //String value = System.console().readLine();
-
         Scanner in = new Scanner(System.in);
+        String value = "";
 
-        int value = in.nextInt();
+        do {
 
-        System.out.println("Next Highest Number is: " + nextHighestNumber.getNextHighestNumber(value));
+            System.out.println("Please enter a number:");
+            //String value = System.console().readLine();
+
+            value = in.nextLine();
+
+            if (!nextHighestNumber.isStringInInteger(value)) {
+                System.out.println("String is not in integer format.");
+            }
+            else{
+                System.out.println("Next Highest Number is: " + nextHighestNumber.getNextHighestNumber(value));
+            }
+
+        }while( !value.equals("x") && !value.equals("X") );
 
     }
 }

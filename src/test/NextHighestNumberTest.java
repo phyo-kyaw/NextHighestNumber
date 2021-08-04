@@ -29,7 +29,7 @@ class NextHighestNumberTest {
     @Test
     void getNextHighestNumber() {
         int expected = 12354;
-        int actual = nextHighestNumber.getNextHighestNumber(12345);
+        int actual = nextHighestNumber.getNextHighestNumber("12345");
         assertEquals(expected, actual);
     }
 

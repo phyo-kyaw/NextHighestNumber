@@ -2,7 +2,8 @@ package com.company;
 
 public class NextHighestNumber {
 
-    public Integer getNextHighestNumber(Integer number){
+    public Integer getNextHighestNumber(String value){
+
         return 0;
     }
 
