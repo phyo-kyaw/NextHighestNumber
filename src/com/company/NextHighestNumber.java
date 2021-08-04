@@ -93,20 +93,9 @@ public class NextHighestNumber {
         return currentDigit > leftDigit;
     }
 
-//    public Boolean isLessThanMinIntegerValue(String value){
-//        //return Integer.parseInt(value) < Integer.MIN_VALUE;
-//        try{
-//            int number = Integer.parseInt(value);
-//        }
-//        catch(NumberFormatException ex){
-//
-//            try{
-//                long val = Long.parseLong(value);
-//            }
-//            catch(NumberFormatException e){
-//                return false;
-//            }
-//        }
-//        return true;
-//    }
+    public String sortValueAscending(String value){
+        return value;
+    }
+
+
 }

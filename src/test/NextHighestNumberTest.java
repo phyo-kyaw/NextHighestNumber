@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class NextHighestNumberTest {
@@ -52,11 +54,26 @@ class NextHighestNumberTest {
     }
 
     @Test
+    void sortValueAscending() {
+        assertEquals((nextHighestNumber.sortValueAscending("3542")), ("2345"));
+
+    }
+
+    @Test
+        //test on most significant digit swap length > 2 test
+    void getNextHighestNumberWith35421() {
+        int expected =  41235; //35421;
+        int actual = nextHighestNumber.getNextHighestNumber("35421");
+        assertEquals(expected, actual);
+    }
+
+    @Test
     void getNextHighestNumberWithNegative() {
         int expected = -12345;
         int actual = nextHighestNumber.getNextHighestNumber("-12354");
         assertEquals(expected, actual);
     }
+
 
 
 }
