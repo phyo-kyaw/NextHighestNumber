@@ -23,7 +23,9 @@ public class NextHighestNumber {
 
             //if changes happen copy the rest of the digit
             if(isChanged){
-                valueBuffer.insert(0,current);
+                //valueBuffer.insert(0,current);
+                valueBuffer.insert(0,value.substring(1,i+1));
+                break;
             }
             else{
                 //swap happened
@@ -53,7 +55,7 @@ public class NextHighestNumber {
         valueBuffer.insert(0,String.valueOf(value.charAt(0)));
 
         if(!isChanged)
-            System.out.println("It's the highest number");
+            System.out.println("It's the HIGHEST number");
         //isNextSkipped = false;
         return Integer.parseInt(valueBuffer.toString());
 
