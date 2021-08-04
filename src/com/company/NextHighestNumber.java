@@ -94,7 +94,10 @@ public class NextHighestNumber {
     }
 
     public String sortValueAscending(String value){
-        return value;
+        return value.chars()
+                .sorted()
+                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+                .toString();
     }
 
 
