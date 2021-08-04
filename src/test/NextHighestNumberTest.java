@@ -60,7 +60,7 @@ class NextHighestNumberTest {
     }
 
     @Test
-        //test on most significant digit swap length > 2 test
+        //test on swap happens and length > 2
     void getNextHighestNumberWith35421() {
         int expected =  41235; //35421;
         int actual = nextHighestNumber.getNextHighestNumber("35421");
