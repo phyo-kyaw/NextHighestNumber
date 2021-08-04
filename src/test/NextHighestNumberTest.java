@@ -34,5 +34,8 @@ class NextHighestNumberTest {
     }
 
 
-
+    @Test
+    void isCurrentDigitValueGreaterThanLeftDigitValue() {
+        assertFalse(nextHighestNumber.isCurrentDigitValueGreaterThanLeftDigitValue(3, 5));
+    }
 }

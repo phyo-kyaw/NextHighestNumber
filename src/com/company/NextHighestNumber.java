@@ -19,4 +19,8 @@ public class NextHighestNumber {
     public Boolean isLengthGreaterThan1(String value){
         return value.length() > 1;
     }
+
+    public Boolean isCurrentDigitValueGreaterThanLeftDigitValue(int currentDigit, int LeftDigit){
+        return true;
+    }
 }
