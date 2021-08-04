@@ -16,19 +16,19 @@ class NextHighestNumberTest {
 
 
     @Test
-    void isStringInInteger() {
+    void test_001_isStringInInteger() {
         //Boolean expected = true;
         Boolean actual = nextHighestNumber.isStringInInteger("12345pp33");
         assertFalse(actual);
     }
 
     @Test
-    void isLengthGreaterThan1() {
+    void test_002_isLengthGreaterThan1() {
         assertFalse(nextHighestNumber.isLengthGreaterThan1("2"));
     }
 
     @Test
-    void isCurrentDigitValueGreaterThanLeftDigitValue() {
+    void test_003_isCurrentDigitValueGreaterThanLeftDigitValue() {
         assertFalse(nextHighestNumber.isCurrentDigitValueGreaterThanLeftDigitValue(3, 5));
     }
 
@@ -38,7 +38,7 @@ class NextHighestNumberTest {
 //    }
 
     @Test
-    void getNextHighestNumber() {
+    void test_004_getNextHighestNumber_leastSignificantDigitSwap() {
         int expected = 12354;
         int actual = nextHighestNumber.getNextHighestNumber("12345");
         assertEquals(expected, actual);
@@ -47,28 +47,28 @@ class NextHighestNumberTest {
 
     @Test
     //test on most significant digit swap test
-    void getNextHighestNumberWith12() {
+    void test_005_getNextHighestNumberWith12_twoDigitOnly() {
         int expected =  21; //35421;
         int actual = nextHighestNumber.getNextHighestNumber("12");
         assertEquals(expected, actual);
     }
 
     @Test
-    void sortValueAscending() {
+    void test_006_sortValueAscending() {
         assertEquals((nextHighestNumber.sortValueAscending("3542")), ("2345"));
 
     }
 
     @Test
         //test on swap happens and length > 2
-    void getNextHighestNumberWith35421() {
+    void test_007_getNextHighestNumberWith35421_notLeastSignificantDigitSwap() {
         int expected =  41235; //35421;
         int actual = nextHighestNumber.getNextHighestNumber("35421");
         assertEquals(expected, actual);
     }
 
     @Test
-    void getNextHighestNumberWithNegative() {
+    void test_008_getNextHighestNumberWithNegative() {
         int expected = -12345;
         int actual = nextHighestNumber.getNextHighestNumber("-12354");
         assertEquals(expected, actual);
