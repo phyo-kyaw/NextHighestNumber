@@ -20,7 +20,7 @@ public class NextHighestNumber {
         return value.length() > 1;
     }
 
-    public Boolean isCurrentDigitValueGreaterThanLeftDigitValue(int currentDigit, int LeftDigit){
-        return true;
+    public Boolean isCurrentDigitValueGreaterThanLeftDigitValue(int currentDigit, int leftDigit){
+        return currentDigit > leftDigit;
     }
 }
