@@ -2,6 +2,7 @@ package test;
 
 import com.company.NextHighestNumber;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,9 +14,19 @@ class NextHighestNumberTest {
 
 
     @Test
+    void isStringInInteger() {
+        //Boolean expected = true;
+        Boolean actual = nextHighestNumber.isStringInInteger("12345pp33");
+        assertTrue(actual);
+    }
+
+    @Test
     void getNextHighestNumber() {
         int expected = 12354;
         int actual = nextHighestNumber.getNextHighestNumber(12345);
         assertEquals(expected, actual);
     }
+
+
+
 }
