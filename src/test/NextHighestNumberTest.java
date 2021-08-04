@@ -21,6 +21,12 @@ class NextHighestNumberTest {
     }
 
     @Test
+    void isLengthGreaterThan1() {
+        assertFalse(nextHighestNumber.isLengthGreaterThan1("2"));
+    }
+
+
+    @Test
     void getNextHighestNumber() {
         int expected = 12354;
         int actual = nextHighestNumber.getNextHighestNumber(12345);

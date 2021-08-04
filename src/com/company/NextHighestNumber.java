@@ -15,4 +15,8 @@ public class NextHighestNumber {
         }
         return true;
     }
+
+    public Boolean isLengthGreaterThan1(String value){
+        return true;
+    }
 }
