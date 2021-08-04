@@ -68,12 +68,20 @@ class NextHighestNumberTest {
     }
 
     @Test
+    void test_008_sortValueDescending() {
+        assertEquals("5432", nextHighestNumber.sortValueDescending("3542"));
+
+    }
+
+    @Test
     //- value
-    void test_008_getNextHighestNumberWithNegativeValue() {
+    void test_009_getNextHighestNumberWithNegativeValue() {
         int expected = -12345;
         int actual = nextHighestNumber.getNextHighestNumber("-12354");
         assertEquals(expected, actual);
     }
+
+
 
 
 
