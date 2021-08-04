@@ -44,6 +44,13 @@ class NextHighestNumberTest {
 
 
     @Test
+    void getNextHighestNumberWith12() {
+        int expected =  21; //35421;
+        int actual = nextHighestNumber.getNextHighestNumber("12");
+        assertEquals(expected, actual);
+    }
+
+    @Test
     void getNextHighestNumberWithNegative() {
         int expected = -12345;
         int actual = nextHighestNumber.getNextHighestNumber("-12354");
