@@ -6,6 +6,12 @@ import java.text.StringCharacterIterator;
 public class NextHighestNumber {
 
     public Integer getNextHighestNumber(String value){
+
+        //not required
+//        if(!isLengthGreaterThan1(value)){
+//            return Integer.parseInt(value);
+//        }
+
         CharacterIterator valueIterator = new StringCharacterIterator(value);
         StringBuffer valueBuffer = new StringBuffer();
         String current = "";
@@ -15,6 +21,7 @@ public class NextHighestNumber {
         Boolean isChanged = false;
 
         for (int i = value.length()-1; i > 0; i--) {
+            System.out.println(i);
 
 
             current = String.valueOf(value.charAt(i));

@@ -27,6 +27,9 @@ public class Main {
                 }
 
             }
+            if(!nextHighestNumber.isStringInInteger(value)){
+                System.out.println("String is not in integer format.");
+            }
             else{
                 System.out.println("Next Highest Number is: " + nextHighestNumber.getNextHighestNumber(value));
             }
