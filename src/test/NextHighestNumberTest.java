@@ -25,17 +25,16 @@ class NextHighestNumberTest {
         assertFalse(nextHighestNumber.isLengthGreaterThan1("2"));
     }
 
+    @Test
+    void isCurrentDigitValueGreaterThanLeftDigitValue() {
+        assertFalse(nextHighestNumber.isCurrentDigitValueGreaterThanLeftDigitValue(3, 5));
+    }
+
 
     @Test
     void getNextHighestNumber() {
         int expected = 12354;
         int actual = nextHighestNumber.getNextHighestNumber("12345");
         assertEquals(expected, actual);
-    }
-
-
-    @Test
-    void isCurrentDigitValueGreaterThanLeftDigitValue() {
-        assertFalse(nextHighestNumber.isCurrentDigitValueGreaterThanLeftDigitValue(3, 5));
     }
 }
