@@ -32,6 +32,7 @@ public class NextHighestNumber {
             if(isChanged){
                 //valueBuffer.insert(0,current);
                 valueBuffer.insert(0,value.substring(1,i+1));
+                isChanged = false;
                 break;
             }
             else{
@@ -59,7 +60,13 @@ public class NextHighestNumber {
         }
 
         //add the first digit
-        valueBuffer.insert(0,String.valueOf(value.charAt(0)));
+        if ( isChanged  || isNextSkipped ){
+            valueBuffer.insert(0,String.valueOf(value.charAt(1)));
+        }
+        else{
+            valueBuffer.insert(0,String.valueOf(value.charAt(0)));
+        }
+
 
         if(!isChanged)
             System.out.println("It's the HIGHEST number");

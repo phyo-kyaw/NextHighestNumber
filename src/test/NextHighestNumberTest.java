@@ -44,6 +44,7 @@ class NextHighestNumberTest {
 
 
     @Test
+    //test on most significant digit swap test
     void getNextHighestNumberWith12() {
         int expected =  21; //35421;
         int actual = nextHighestNumber.getNextHighestNumber("12");
