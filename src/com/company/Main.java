@@ -26,7 +26,7 @@ public class Main {
 
             if (!nextHighestNumber.isStringInInteger(value)  ) {
                 if (!value.equals("x") && !value.equals("X")) {
-                    System.out.println("String is not in integer format.");
+                    System.out.println("String is out of bound or not in integer format.");
                 }
 
             }

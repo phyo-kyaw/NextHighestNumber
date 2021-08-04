@@ -30,10 +30,18 @@ class NextHighestNumberTest {
         assertFalse(nextHighestNumber.isCurrentDigitValueGreaterThanLeftDigitValue(3, 5));
     }
 
+//    @Test
+//    void isLessThanMinIntegerValue() {
+//        assertTrue(nextHighestNumber.isLessThanMinIntegerValue("-2147483649"));
+//    }
+
     @Test
-    void isLessThanMinIntegerValue() {
-        assertTrue(nextHighestNumber.isLessThanMinIntegerValue("-2147483649"));
+    void getNextHighestNumber() {
+        int expected = 12354;
+        int actual = nextHighestNumber.getNextHighestNumber("12345");
+        assertEquals(expected, actual);
     }
+
 
     @Test
     void getNextHighestNumber() {
