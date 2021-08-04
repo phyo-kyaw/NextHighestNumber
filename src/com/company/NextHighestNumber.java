@@ -87,6 +87,6 @@ public class NextHighestNumber {
     }
 
     public Boolean isLessThanMinIntegerValue(String value){
-        return false;
+        return Integer.parseInt(value) < Integer.MIN_VALUE;
     }
 }
