@@ -2,6 +2,7 @@ package com.company;
 
 import java.text.CharacterIterator;
 import java.text.StringCharacterIterator;
+import java.util.Collections;
 
 public class NextHighestNumber {
 
@@ -112,9 +113,10 @@ public class NextHighestNumber {
 
     public String sortValueDescending(String value){
         return value.chars()
-                .sorted()
+                .boxed()
+                .sorted(Collections.reverseOrder())
                 .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
-                .reverse()
+                //.reverse()
                 .toString();
     }
 

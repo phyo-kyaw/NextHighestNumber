@@ -69,7 +69,7 @@ class NextHighestNumberTest {
 
     @Test
     void test_008_sortValueDescending() {
-        assertEquals("5432", nextHighestNumber.sortValueDescending("3542"));
+        assertEquals("54321", nextHighestNumber.sortValueDescending("31542"));
 
     }
 
