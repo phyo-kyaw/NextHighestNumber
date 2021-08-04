@@ -17,7 +17,7 @@ class NextHighestNumberTest {
     void isStringInInteger() {
         //Boolean expected = true;
         Boolean actual = nextHighestNumber.isStringInInteger("12345pp33");
-        assertTrue(actual);
+        assertFalse(actual);
     }
 
     @Test

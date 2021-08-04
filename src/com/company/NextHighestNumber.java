@@ -7,6 +7,7 @@ public class NextHighestNumber {
     }
 
     public Boolean isStringInInteger(String value){
-        return false;
+
+        return true;
     }
 }
