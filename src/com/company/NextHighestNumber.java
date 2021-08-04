@@ -15,20 +15,18 @@ public class NextHighestNumber {
         Boolean isChanged = false;
 
         for (int i = value.length()-1; i > 0; i--) {
-            System.out.println(valueBuffer.toString());
-            System.out.println(value.charAt(i));
+
 
             current = String.valueOf(value.charAt(i));
 
-            System.out.println(current);
-
             left = String.valueOf(value.charAt(i-1));
 
+            //if changes happen copy the rest of the digit
             if(isChanged){
-                System.out.println("first ;" + current);
                 valueBuffer.insert(0,current);
             }
             else{
+                //swap happened
                 if(isNextSkipped){
                     right = String.valueOf(value.charAt(i+1));
                     valueBuffer.insert(0,right);
@@ -36,13 +34,13 @@ public class NextHighestNumber {
                     isChanged = true;
                 }
                 else{
+                    //swapping starts at current index
                     if(isCurrentDigitValueGreaterThanLeftDigitValue( Integer.parseInt(current) ,
                             Integer.parseInt(left)) ) {
                         valueBuffer.insert(0,left);
                         isNextSkipped = true;
                     }
                     else{
-                        System.out.println("last ;" + current);
                         valueBuffer.insert(0,current);
                     }
 
@@ -50,40 +48,15 @@ public class NextHighestNumber {
             }
 
         }
+
+        //add the first digit
         valueBuffer.insert(0,String.valueOf(value.charAt(0)));
+
         if(!isChanged)
             System.out.println("It's the highest number");
         //isNextSkipped = false;
         return Integer.parseInt(valueBuffer.toString());
 
-//        for (char ch = valueIterator.last(); ch != CharacterIterator.DONE; ch = valueIterator.previous()) {
-//            current = String.valueOf(ch);
-//            left = String.valueOf(valueIterator.previous());
-//
-//            System.out.println("1 :12" +
-//                    "" + current);
-//            System.out.println(left);
-//
-//            if(isCurrentDigitValueGreaterThanLeftDigitValue( Integer.parseInt(current) ,
-//                                    Integer.parseInt(left)) ) {
-//                valueBuffer.insert(0,current);
-//                valueBuffer.insert(0,left);
-//            }
-//            else{
-//                if(isNextSkipped){
-//                    valueBuffer.insert(0,current);
-//                }
-//                else {
-//                    valueBuffer.insert(0,left);
-//                }
-//
-//            }
-//        }
-//
-//        if(isNextSkipped)
-//            System.out.println("It's the highest number");
-//
-//        return Integer.parseInt(valueBuffer.toString());
     }
 
     public Boolean isStringInInteger(String value){

@@ -16,13 +16,16 @@ public class Main {
 
         do {
 
-            System.out.println("Please enter a number:");
+            System.out.println("Please enter a number (or 'X' to exit):");
             //String value = System.console().readLine();
 
             value = in.nextLine();
 
-            if (!nextHighestNumber.isStringInInteger(value)) {
-                System.out.println("String is not in integer format.");
+            if (!nextHighestNumber.isStringInInteger(value)  ) {
+                if (!value.equals("x") && !value.equals("X")) {
+                    System.out.println("String is not in integer format.");
+                }
+
             }
             else{
                 System.out.println("Next Highest Number is: " + nextHighestNumber.getNextHighestNumber(value));
