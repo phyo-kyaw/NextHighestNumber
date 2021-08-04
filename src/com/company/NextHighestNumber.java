@@ -124,7 +124,11 @@ public class NextHighestNumber {
     }
 
     public String sortValueDescending(String value){
-        return value;
+        return value.chars()
+                .sorted()
+                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+                .reverse()
+                .toString();
     }
 
 }
