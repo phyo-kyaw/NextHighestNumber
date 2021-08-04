@@ -14,6 +14,9 @@ public class Main {
         Scanner in = new Scanner(System.in);
         String value = "";
 
+        System.out.println(Integer.MAX_VALUE);
+        System.out.println(Integer.MIN_VALUE);
+
         do {
 
             System.out.println("Please enter a number (or 'X' to exit):");

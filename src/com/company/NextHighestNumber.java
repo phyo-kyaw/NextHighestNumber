@@ -85,4 +85,8 @@ public class NextHighestNumber {
     public Boolean isCurrentDigitValueGreaterThanLeftDigitValue(int currentDigit, int leftDigit){
         return currentDigit > leftDigit;
     }
+
+    public Boolean isLessThanMinIntegerValue(String value){
+        return false;
+    }
 }
