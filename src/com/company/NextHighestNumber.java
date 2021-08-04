@@ -5,12 +5,13 @@ import java.text.StringCharacterIterator;
 
 public class NextHighestNumber {
 
-    public Integer getNextHighestNumber(String value){
+    public Integer getNextHighestNumber(String valueIn){
 
         StringBuffer valueBuffer = new StringBuffer();
         StringBuffer valueBufferProcessed = new StringBuffer();
         StringBuffer valueBufferStart = new StringBuffer();
 
+        String value = "";
         String current = "";
         String left = "";
         String right = "";
@@ -19,8 +20,8 @@ public class NextHighestNumber {
         Boolean isChanged = false;
         Boolean isNegativeValue = false;
 
-        if(Integer.parseInt(value) < 0 ){
-            value = value.substring(1);
+        if(Integer.parseInt(valueIn) < 0 ){
+            value = valueIn.substring(1);
             isNegativeValue = true;
         }
         valueBufferStart.append(value);
@@ -37,7 +38,7 @@ public class NextHighestNumber {
 
             //valueBufferStart.
 
-            //if(!isNegativeValue){
+
                 if (isCurrentDigitValueGreaterThanLeftDigitValue(Integer.parseInt(current),
                         Integer.parseInt(left)) && !isNegativeValue
                 || Integer.parseInt(current) < Integer.parseInt(left) && isNegativeValue) {
@@ -51,49 +52,35 @@ public class NextHighestNumber {
                 } else {
                     valueBuffer.insert(0, current);
                 }
-            //}
-//            else{
-//                if (Integer.parseInt(current) < Integer.parseInt(left)) {
-//                    valueBuffer.insert(0, current);
-//                    valueBuffer.insert(0, left);
-//                    valueToProcess = left;
-//                    valueBufferStart.setLength(valueBufferStart.length() - 1);
-//                    isChanged = true;
-//                    break;
-//                    //isNextSkipped = true;
-//                } else {
-//                    valueBuffer.insert(0, current);
-//                }
-//
-//            }
 
 
         }
-        if(!isNegativeValue){
-            valueBufferProcessed = new StringBuffer(sortValueAscending(valueBuffer.toString()));
-            int indexValueToMoveForward = valueBufferProcessed.lastIndexOf(valueToProcess) + 1;
-            char valueToMoveForward = valueBufferProcessed.charAt(indexValueToMoveForward);
-            valueBufferProcessed.delete(indexValueToMoveForward, indexValueToMoveForward +1);
+        if(isChanged){
+            if(!isNegativeValue){
+                valueBufferProcessed = new StringBuffer(sortValueAscending(valueBuffer.toString()));
+                int indexValueToMoveForward = valueBufferProcessed.lastIndexOf(valueToProcess) + 1;
+                char valueToMoveForward = valueBufferProcessed.charAt(indexValueToMoveForward);
+                valueBufferProcessed.delete(indexValueToMoveForward, indexValueToMoveForward +1);
 
-            valueBufferStart.append(String.valueOf(valueToMoveForward))
-                    .append(valueBufferProcessed);
+                valueBufferStart.append(String.valueOf(valueToMoveForward))
+                        .append(valueBufferProcessed);
+            }
+            else{
+                valueBufferProcessed = new StringBuffer(sortValueDescending(valueBuffer.toString()));
+                int indexValueToMoveForward = valueBufferProcessed.indexOf(valueToProcess) + 1;
+                char valueToMoveForward = valueBufferProcessed.charAt(indexValueToMoveForward);
+                valueBufferProcessed.delete(indexValueToMoveForward, indexValueToMoveForward +1);
+
+                valueBufferStart.append(String.valueOf(valueToMoveForward))
+                        .append(valueBufferProcessed).insert(0,"-");
+            }
         }
         else{
-            valueBufferProcessed = new StringBuffer(sortValueAscending(valueBuffer.toString()));
-            int indexValueToMoveForward = valueBufferProcessed.lastIndexOf(valueToProcess) + 1;
-            char valueToMoveForward = valueBufferProcessed.charAt(indexValueToMoveForward);
-            valueBufferProcessed.delete(indexValueToMoveForward, indexValueToMoveForward +1);
-
-            valueBufferStart.append(String.valueOf(valueToMoveForward))
-                    .append(valueBufferProcessed);
+            System.out.println("It's the HIGHEST number");
+            return Integer.parseInt(valueIn);
         }
 
 
-        //valueBuffer.
-
-        if(!isChanged)
-            System.out.println("It's the HIGHEST number");
-        //isNextSkipped = false;
         return Integer.parseInt(valueBufferStart.toString());
 
     }
